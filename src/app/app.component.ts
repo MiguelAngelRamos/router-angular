@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'router-angular';
+  navbarOpts = [
+    { path: '/home', name: 'Home'},
+    { path: '/users', name: 'Users'}
+  ];
 }
+
+
+// [1, 2, 3, 4] // 4
+// ['miguel', 'pedro', 'maria'] // 3
+// [{ name: 'Miguel', lastname: 'ramos'}, {name: 'pedro', lastname: 'Perez'}] // 2
