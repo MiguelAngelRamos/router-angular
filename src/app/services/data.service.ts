@@ -16,13 +16,16 @@ export class DataService {
   }
   //* Un metodo para traer los comentarios
   getComments() {
-
+  
   }
   //* Para traer al usuario por su Id
   getUserId() {
+    // alt + 96
   }
   //* Para traer a todos los usuarios
   getUsersAll() {
     
   }
 }
+
+// control + alt + } + espacio

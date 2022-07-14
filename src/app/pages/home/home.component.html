@@ -1,1 +1,21 @@
-<p>home works!</p>
+<div class="row" *ngFor="let post of posts">
+
+  <div class="col posts">
+    <h2>{{ post.title.charAt(0).toUpperCase() + post.title.slice(1) }}</h2>
+    <!-- 
+    hola Mundo
+    h transformo en H
+    H + ola Mundo = Hola Mundo 
+    -->
+    <a></a>
+    <!-- .btn.btn-secondary -->
+    <div class="btn btn-secondary"></div>
+
+    <!-- Comentarios de los posts -->
+    <hr>
+  </div>
+
+</div>
+
+<!-- alt + 96 -->
+
