@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IPost } from '../interfaces/IPost';
+import { IUser } from '../interfaces/IUser';
 
 @Injectable({
   providedIn: 'root'
@@ -19,13 +20,19 @@ export class DataService {
   getComments() {
   
   }
+
   //* Para traer al usuario por su Id
-  getUserId() {
+  // *id = 1, id = 2, id = 3
+  getUserId(id: number):Observable<IUser> {
     // alt + 96
+    // return this.httpClient.get('https://jsonplaceholder.typicode.com/users' + '/'+ id);
+   return this.httpClient.get<IUser>(`https://jsonplaceholder.typicode.com/users/${id}`)
+   //* https://jsonplaceholder.typicode.com/users/1
   }
-  //* Para traer a todos los usuarios
-  getUsersAll() {
-    
+
+  //* Para traer a todos los usuarios (Un Array de 10 users (objetos))
+  getUsersAll():Observable<IUser[]> {
+    return this.httpClient.get<IUser[]>('https://jsonplaceholder.typicode.com/users')
   }
 }
 
