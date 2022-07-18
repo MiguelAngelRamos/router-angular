@@ -10,12 +10,13 @@ import { DataService } from 'src/app/services/data.service';
 export class HomeComponent implements OnInit {
 
   public posts: IPost [] = [];
+
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
     this.dataService.getPosts().subscribe( data => {
       console.log(data);
-      this.posts = data;
+      this.posts = data; //* Que es un Array de 100 Posts
     });
   }
 

@@ -2,15 +2,10 @@
 
   <div class="col posts">
     <h2>{{ post.title.charAt(0).toUpperCase() + post.title.slice(1) }}</h2>
-    <!-- 
-    hola Mundo
-    h transformo en H
-    H + ola Mundo = Hola Mundo 
-    -->
-    <a></a>
-    <!-- .btn.btn-secondary -->
-    <div class="btn btn-secondary"></div>
-
+    <a>Ver Autor</a>
+    <p>{{ post.body }}</p>
+    <!-- para generar el botón con emmet .btn.btn-secondary -->
+    <div class="btn btn-secondary">Ver Comentarios</div>
     <!-- Comentarios de los posts -->
     <hr>
   </div>
@@ -19,3 +14,8 @@
 
 <!-- alt + 96 -->
 
+    <!-- 
+    hola Mundo
+    h transformo en H
+    H + ola Mundo = Hola Mundo 
+    -->

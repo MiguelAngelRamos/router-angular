@@ -12,6 +12,7 @@ export class DataService {
 
   //* Un metodo para traer los posts
   getPosts():Observable<IPost[]> {
+    //* end point
     return this.httpClient.get<IPost[]>('https://jsonplaceholder.typicode.com/posts');
   }
   //* Un metodo para traer los comentarios
