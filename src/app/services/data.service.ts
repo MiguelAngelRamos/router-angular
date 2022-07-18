@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { IComment } from '../interfaces/IComment';
 import { IPost } from '../interfaces/IPost';
 import { IUser } from '../interfaces/IUser';
 
@@ -8,17 +9,21 @@ import { IUser } from '../interfaces/IUser';
   providedIn: 'root'
 })
 export class DataService {
-
+  // BaseUrl = 'https://jsonplaceholder.typicode.com';
   constructor(private httpClient: HttpClient) { }
 
   //* Un metodo para traer los posts
   getPosts():Observable<IPost[]> {
     //* end point
     return this.httpClient.get<IPost[]>('https://jsonplaceholder.typicode.com/posts');
+    // return this.httpClient.get<IPost[]>(this.BaseUrl + '/posts');
+    // return this.httpClient.get<IPost[]>(`${this.BaseUrl}/posts`);
+
   }
   //* Un metodo para traer los comentarios
-  getComments() {
-  
+
+  getComments():Observable<IComment[]> {
+    return this.httpClient.get<IComment[]>('https://jsonplaceholder.typicode.com/comments')
   }
 
   //* Para traer al usuario por su Id
