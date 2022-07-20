@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IUser } from 'src/app/interfaces/IUser';
+import { Component, OnInit } from '@angular/core';
+
 import { DataService } from 'src/app/services/data.service';
+import { IUser } from 'src/app/interfaces/IUser';
 
 @Component({
   selector: 'app-user',
@@ -9,7 +10,10 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
- 
+
+  public user!: IUser;
+  // public user : IUser | any;
+  // asignacion por assertion
   constructor(private activatedRoute:ActivatedRoute, private dataService: DataService) { }
 
   ngOnInit(): void {
@@ -25,10 +29,12 @@ export class UserComponent implements OnInit {
       // console.log(params.get('id'));
       // console.log(typeof(params.get('id')));
       let id = Number(params.get('id'));
-      console.log(typeof(id)); //* number
-      console.log(id);
-      this.dataService.getUserId(id).subscribe(user => console.log(user));
+      // console.log(typeof(id)); //* number
+      // console.log(id);
+      this.dataService.getUserId(id).subscribe( data => {
+        console.log(data);
+        this.user = data;
+      });
     });
   }
-
 }

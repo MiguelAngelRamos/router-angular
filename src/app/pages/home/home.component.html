@@ -2,8 +2,9 @@
 
   <div class="col posts">
     <h2>{{ post.title.charAt(0).toUpperCase() + post.title.slice(1) }}</h2>
-    <a>Ver Autor</a>
+    <a [routerLink]="['/user', post.userId]">Ver Autor</a>
     <p>{{ post.body }}</p>
+    <!-- localhost:4200/user/1  -->
     <!-- para generar el botón con emmet .btn.btn-secondary -->
     <div class="btn btn-secondary">Ver Comentarios</div>
     <!-- Comentarios de los posts -->
@@ -19,3 +20,6 @@
     h transformo en H
     H + ola Mundo = Hola Mundo 
     -->
+
+
+    <!-- http://localhost:4200/user/20 -->
