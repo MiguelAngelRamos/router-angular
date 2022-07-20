@@ -18,8 +18,8 @@ export class DataService {
     return this.httpClient.get<IPost[]>('https://jsonplaceholder.typicode.com/posts');
     // return this.httpClient.get<IPost[]>(this.BaseUrl + '/posts');
     // return this.httpClient.get<IPost[]>(`${this.BaseUrl}/posts`);
-
   }
+  
   //* Un metodo para traer los comentarios
 
   getComments():Observable<IComment[]> {
