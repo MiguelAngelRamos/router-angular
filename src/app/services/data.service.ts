@@ -20,7 +20,8 @@ export class DataService {
     // return this.httpClient.get<IPost[]>(`${this.BaseUrl}/posts`);
   }
   
-  //* Un metodo para traer los comentarios
+  //* Un metodo para traer los comentarios 
+ //* Son 500 comentarios
 
   getComments():Observable<IComment[]> {
     return this.httpClient.get<IComment[]>('https://jsonplaceholder.typicode.com/comments')

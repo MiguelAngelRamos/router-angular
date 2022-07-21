@@ -6,9 +6,19 @@
     <p>{{ post.body }}</p>
     <!-- localhost:4200/user/1  -->
     <!-- para generar el botón con emmet .btn.btn-secondary -->
-    <div class="btn btn-secondary">Ver Comentarios</div>
+    <!-- <p>id del post: {{ post.id }}</p> -->
+
+    <button class="btn btn-secondary" (click)="commentById(post.id)">{{messageButton}}</button>
+
     <!-- Comentarios de los posts -->
-    
+    <ng-container *ngFor="let comment of commentsFilter">
+      <div *ngIf="comment.postId === post.id && isVisible == true" class="mt-3 col-sm-10 offset-sm-1">
+        <label class="fw-bold">User: {{ comment.email}}</label>
+        <br>
+        <label class="fw-bold">Respuesta:</label>
+        <p>{{ comment.body }}</p>
+      </div>
+    </ng-container>
     <hr>
   </div>
 </div>

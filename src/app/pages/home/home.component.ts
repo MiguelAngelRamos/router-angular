@@ -12,6 +12,9 @@ export class HomeComponent implements OnInit {
 
   public posts: IPost [] = [];
   public comments: IComment [] = [];
+  public commentsFilter: IComment [] = [];
+  public messageButton: string = 'Ver comentarios';
+  public isVisible: boolean = false;
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
@@ -25,7 +28,7 @@ export class HomeComponent implements OnInit {
       this.posts = data; //* Que es un Array de 100 Posts
     });
   }
-
+  // * 500 comentarios dentro de "comments"
   getCommentsApi() {
     this.dataService.getComments().subscribe(commentData => {
       console.log(commentData);
@@ -33,4 +36,13 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  commentById(id: number) {
+    //* id del post
+   this.commentsFilter = this.comments.filter( comment => comment.postId === id );
+   this.isVisible = !this.isVisible;
+   this.isVisible == false? this.messageButton = 'Ver comentarios': this.messageButton = 'Ocultar comentarios';
+   console.log(this.commentsFilter);
+  }
+
+ 
 }

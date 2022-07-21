@@ -11,6 +11,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { UserComponent } from './pages/user/user.component';
 import { UsersComponent } from './pages/users/users.component';
 import { Error404Component } from './pages/error404/error404.component';
+import { CardExampleComponent } from './components/card-example/card-example.component';
+import { ContainerPhotosComponent } from './pages/container-photos/container-photos.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { Error404Component } from './pages/error404/error404.component';
     HomeComponent,
     UserComponent,
     UsersComponent,
-    Error404Component
+    Error404Component,
+    CardExampleComponent,
+    ContainerPhotosComponent
   ],
   imports: [
     BrowserModule,
